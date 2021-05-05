@@ -1,12 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>The Disaster Cafe</title>
+    <link rel ="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel ="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-    
+    <header>
+        <nav>
+            <ul>
+                <li><img id="logo" src="images/logo.png" alt="The Disaster Cafe"></li>
+                <li><a href="index.html"><span>Home</span></a></li>
+                <li><a href="about.html"> About Us</a></li>
+                <li><a href="blog.html">Blogs</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    <div class="container main-container">
+        <h2 class="mt-4">Staff Password Validator</h2>
+        <div class="col-x1-6 col-md-8 col-sm-12 col-xs-12">
+            <div class="from-row">
+                <label class="col-sm-4 col-from-label" for="name">Enter Password: </label>
+                <div class="col-sm-8 mb-4">
+                    <input type="password" class="form-control" name="Password" id="Password">
+                    <button class="btn btn-primary mt-3" id="validate">Check Password</button>
+                    <label id="wrong-password" class="wrong-password mt-2">**INVALID FORMAT,TRY AGAIN**</label>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container main-container customer-container">
+        <h2 class="mt-4">Customers</h2>
+        <div class="customers" id="customersTable">
+
+        </div>
+    </div>
+    <div class="container">
+        <h1 class="mt-5 text-center">Menu Options></h1>
+        <h2 class="mt-5 mb-4 text-center">Starter Menu</h2>
+        <div class="row" id="starters"></div>
+        <h2 class="mt-5 mb-4 text-center">Main Menu</h2>
+        <div class="row" id="main"></div>
+        <h2 class="mt-5 mb-4 texticenter">Deserts Menu</h2>
+        <div class="row" id="deserts"></div>
+        <h2 class="mt-5 mb-4 text-center">Drinks Menu</h2>
+        <div class="row" id="drinks"></div>
+            <h1 class="mb-5">Billing</h1>
+            <div class="from-row">
+                 <label classs ="col-sm-12 col-md-6 col-from-label"for="total">
+                     <h5 class="text-right">Total Bill</h5>
+                 </label>
+                <div class="col-sm-12 col md-2 mb-4 ml-5">
+                    <input type="text" class="from-control main" id="total-bill" readonly>
+                </div>
+            </div>
+            <div class="from-row">
+                <label class="col-sm-12 col-md-6 col-from-label" for="starter-total">
+                    <h5 class="text-right">Starter</h5>
+                </label>
+                <div class="col-sm-12 col-md-2 mb-4 ml-5">
+                    <input type="text" class="from-control-main" id="starter-bill" readonly>
+                </div>
+            </div>
+            <div class="from-row">
+                <label class="col-sm-12 col-md-6 col-from-label" for="main-total">
+                    <h5 class="text-right">Main</h5>
+                </label>
+                <div class="col-sm-12 col-md-2 mb-4 ml-5"> 
+                    <input type="text" class="form-control main" id="main-total" readonly>
+                 </div>
+              </div>
+              <div class="form-row">
+                 <label class="col-sm-12 col-md-6 col-form-label" for="desert-total">
+                    <h5 class="text-right">Deserts</h5>
+                 </label>
+                 <div class="col-sm-12 col-md-2 mb-4 ml-5"> 
+                    <input type="text" class="form-control main" id="desert-total" readonly>
+                 </div>
+              </div>
+              <div class="form-row">
+                 <label class="col-sm-12 col-md-6 col-form-label" for="drink-total">
+                    <h5 class="text-right">Drinks</h5>
+                 </label>
+                 <div class="col-sm-12 col-md-2 mb-4 ml-5"> 
+                    <input type="text" class="form-control main" id="drink-total" readonly>
+                 </div>
+              </div>
+              <div class="form-row">
+                 <label class="col-sm-12 col-md-6 col-form-label" for="veg-total">
+                    <h5 class="text-right">Vegetarian cost</h5>
+                 </label>
+                 <div class="col-sm-12 col-md-2 mb-4 ml-5"> 
+                    <input type="text" class="form-control main" id="veg-total" readonly>
+                 </div>
+              </div>
+              <div class="form-row">
+                 <label class="col-sm-12 col-md-6 col-form-label" for="nonveg-total">
+                    <h5 class="text-right">Non Vegetarian cost</h5>
+                 </label>
+                 <div class="col-sm-12 col-md-2 mb-2 mb-4 ml-5">
+                     <input type="text" class="from-contol main" id="nonveg-total" readonly>
+                     <button class="btn btn-dark col-sm-12 col-md-12 mt-3" id="billcalculate">Calculate</button>
+                     <button class="btn btn-primarycol-sm-12 col-md-12 mt-3" id="myBtn">All Orders</button>
+                 </div>
+            </div>
+       </div>
+</div>
+</div>
+<footer>
+    <p>&copy;The Disaster Cafe 2021.</p>
+</footer>
+</div>
+<div id="total-orders" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="text-center" id="total-table">     
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="script/index.js"></script>
+
 </body>
 </html>
