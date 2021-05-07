@@ -1,0 +1,117 @@
+body{
+    background-color: #b3dcf7;
+}
+@media(min-width: 1200px) {
+    .main-container{
+        max-width: 970px;
+    }
+}
+h5{
+    font-family: cursive;
+}
+#starters h5{
+    color: #da5b00;
+}
+#main h5{
+    color: #1a499e;
+}
+#deserts h5{
+    color: #206db1
+}
+#drinks h5{
+    color: #949494;
+}
+h1{
+    color:#a91875;
+}
+h2{
+    color: #078477;
+}
+h4{
+    color: #ad0c13;
+}
+.main-container{
+	border:2px solid #959596;
+	border-radius: 10px;
+	margin-top: 30px;
+}
+.wrong-password{
+	color: red;
+	font-size: 18px;
+	display: none;
+	font-weight: bold;
+}
+.menu-container h3{
+	text-align: center;
+}
+.customer-container h2{
+	text-align: center;
+}
+header{
+	width:100%;
+	text-align:center;
+}
+nav ul li{
+    list-style-type: none;
+    height: 60px;
+}
+nav ul li img{
+    margin-left: 20px;
+    height: 60px;
+}
+nav{
+    position: sticky;
+    top: 0;
+    background:#081919 ;
+}
+nav ul{
+    display: flex;
+    padding: 10px;
+    justify-content: end;
+    margin-top:0;
+}
+nav a{
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    display: block;
+    padding: 7px 12px 7px 12px;
+}
+nav a.active{
+    background-color: darkgreen;
+    color: white;
+}
+nav a:hover{
+    text-decoration: underline;
+}
+nav a.active spam{
+    color: white;
+}
+footer{
+    text-align: center;
+    padding: 10px;
+    margin: top 30px;
+    background: #081919;
+}
+footer p{
+    margin-top: 17px;
+    font-size: 22px;
+    color: white;
+    text-shadow: 3px 1px 1px #000000;   
+}
+.panel, .flip{
+    padding: 5px;
+    text-align: center;
+    background-color: #a1bdb5;
+    border: solid 1px #c3c3c3;
+    font-family: cursive;
+    font-weight: bold;
+}
+.panel{
+    padding: 50px;
+    display: none;
+}
+.panel p{
+    
+}
