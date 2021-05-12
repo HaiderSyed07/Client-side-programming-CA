@@ -1,52 +1,369 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>The Disaster Cafe</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    
-</head>
-<body style="background:rgb(68, 245, 192);">
-
+  </head>
+  <body style="background: rgb(68, 245, 192)">
     <header>
-        <nav>
-            <ul>
-                <li><img id="logo" src="images/logo.png" alt="The Disaster Cafe Logo"></li>
-                <li><a href="index.html"><span>Home</span></a></li>
-                <li><a href="about.html"> About Us</a></li>
-                <li><a href="blog.html">Blogs</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                
-            </ul>
-        </nav>
+      <nav>
+        <ul>
+          <li>
+            <img id="logo" src="images/logo.png" alt="The Disaster Cafe Logo" />
+          </li>
+          <li>
+            <a href="index.html"><span>Home</span></a>
+          </li>
+          <li><a href="about.html"> About Us</a></li>
+          <li><a href="blog.html">Blogs</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
     </header>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
 
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
-        
-        <!-- Wrapper for slides -->
-    <div class="carousel-inner">
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
         <div class="item active">
-          <img src="images/slider-2.jpg" alt="Los Angeles" style="width:100%;">
+          <img
+            src="images/slider-2.jpg"
+            alt="Los Angeles"
+            style="width: 100%"
+          />
         </div>
-  
+
         <div class="item">
-          <img src="images/slider-1.jpg" alt="Chicago" style="width:100%;">
+          <img src="images/slider-1.jpg" alt="Chicago" style="width: 100%" />
         </div>
-      
+
         <div class="item">
-          <img src="images/slider-3.jpg" alt="New york" style="width:100%;">
+          <img src="images/slider-3.jpg" alt="New york" style="width: 100%" />
         </div>
       </div>
-      
-</body>
+
+      <!-- Left and right controls-->
+      <a
+        class="left carousel-vontrol"
+        href="#myCarousel"
+        href="#myCaraousel"
+        data-slide="prev"
+      >
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <div class="animations">
+      <div class="p-2 flex-fill bd-highlight">
+        <h1 class="text-center">Our Branches</h1>
+      </div>
+    </div>
+    <div class="container mt-5 d-flex bd-highlight">
+      <div class="p-2 flex-fill bd-highlight">
+        <div class="shadow p-3 mb-5 bg-white rounded b">
+          <div id="flip" class="flip">Main</div>
+          <div id="panel" class="panel">
+            <ul class="list-group">
+              <p>
+                <b
+                  >Our main branch is located at The Cliffs of Moher. The Cliffs
+                  of Moher</b
+                >
+              </p>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="p-2 flex-fill bd-highlight">
+        <div class="shadow p-3 mb-5 bg-white rounded">
+          <div id="flip2" class="flip">Second</div>
+          <div id="panel2" class="panel">
+            <ul class="list-group">
+              <p>
+                <b>Our second branch is located at Grafton Street, Dublin</b>
+              </p>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="p-2 flex-fill bd-highlight">
+        <div class="shadow p-3 mb-5 bg-white rounded">
+          <div id="flip3" class="flip">Third</div>
+          <div id="panel3" class="panel">
+            <ul class="list-group">
+              <p>
+                <b
+                  >Our third branch is located at Killarney National Park and
+                  Muckross House</b
+                >
+              </p>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mb-5">
+      <h1 class="text-center mb-5">Founding Members</h1>
+      <div class="row" id="team">
+        <div class="card col-3">
+          <img
+            src="images/team-1.jpg"
+            alt="team-1"
+            style="width: 100%; height: 260px"
+          />
+          <h3>Founder and Ceo</h3>
+          <h4>William Smith</h4>
+          <p>
+            Idea behind Disaster Cafe was to provide the irish people and
+            tourists, true and authentic flavours of irish cusine...
+          </p>
+        </div>
+        <div class="card col-3">
+          <img
+            src="images/team-2.jpg"
+            alt="team-2"
+            style="width: 100%; height: 260px"
+          />
+          <h3>CO-Founder</h3>
+          <h4>John Smith</h4>
+          <p>
+            our main focus now a days is to re-introduce the lost irish cuisine
+            and to present authentic flavours of cusine to people...
+          </p>
+        </div>
+        <div class="card col-3">
+          <img
+            src="images/team-3.jpg"
+            alt="team-3"
+            style="width: 100%; height: 260px"
+          />
+          <h3>CO-Founder</h3>
+          <h4>Arthur Smith</h4>
+          <p>
+            Conventional cusine seems to be lost all around the world, our focus
+            is to provide our people with the best taste of conventional
+            cusine...
+          </p>
+        </div>
+      </div>
+      <div class="container cusine mt-5 mb-5">
+        <h1 class="text-center mb-5">Signature Recipies</h1>
+        <div class="row" id="tbone-steak">
+          <div class="col-md-5">
+            <img src="images/beefsteak.jpg" alt="beefsteak" />
+          </div>
+          <div class="col-md-6">
+            <h2 class="text-right">Tbone steak</h2>
+            <h3 class="text-right">
+              T-bone traditionally sourced from either the chianina or maremmana
+              breeds of cattle. A favourite of Tuscan cuisine, the steak is
+              grilled over a wood or charcoal fire, seasoned with salt,
+              sometimes with black peeper, and olive oil, applied immediately
+              after the meat is retired from the heat. Thickly cut and very
+              large,accompanied by Tuscan beans.
+            </h3>
+          </div>
+        </div>
+        <hr />
+        <div class="row" id="cheese-cake">
+          <div class="col-md-6">
+            <h2>Cheese Cake</h2>
+            <h3 class="text-left">
+              Signature sweet dessert consisting of one or more layers. The
+              main, and thickest, layer consists of a mixture of a soft,fresh
+              cheese (typically cottage cheese, cream cheese or ricotta), eggs,
+              and sugar. If there is a bottom layer, it most often consists of a
+              crust or base made from crushed cookies (or digestive biscuits),
+              graham crackers, pastry, or sponge cake
+            </h3>
+          </div>
+          <div class="col-md-5">
+            <img src="images/cheeseCake.jpg" alt="cheese-cake" />
+          </div>
+        </div>
+        <hr />
+        <div class="row" id="fried-rice">
+          <div class="col-md-5">
+            <img src="images/VegetableFriedRice.jpg" alt="veggie-rice" />
+          </div>
+          <div class="col-md-6">
+            <h2 class="text-right">Vegetable Fried Rice</h2>
+            <h3 class="text-right">
+              Another signature dish which we Disaster family proudly own, egg
+              drop soup and fried rice, everyones absolute favourites.
+              Disasters' set the bar high for me early when it comes to how
+              amazing fried rice could be. Rice are always perfectly al dente
+              with slightly crispy edges, full of rich savory flavors, and
+              loaded up with plenty of extra veggies, eggs, and whatever protein
+              sounded good.
+            </h3>
+          </div>
+        </div>
+        <hr />
+        <div class="row" id="fat-frog">
+          <div class="col-md-6">
+            <h2>Fat Frog Drink</h2>
+            <h3 class="text-left">
+              Fat Frog Drink - A cocktail of alcopops served in a pint glass has
+              caught the attention of many irish people in recent days. The
+              drink, which is green in colour and called a Fat Frog, has an low
+              alcohol content, marked as a signature drink of disaster cafe. Its
+              not like alcohlic Fat Frog. You can try it in your dinner to
+              double up the pleasure.
+            </h3>
+          </div>
+          <div class="col-md-5">
+            <img src="images/fatfrog.jpg" alt="fat-frog" />
+          </div>
+        </div>
+      </div>
+      <!-- Trigger/Open The Modal -->
+
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+        <div class="d-flex justify-content-center">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <!--Section: Contact v.2-->
+            <section class="mb-4">
+              <div class="row">
+                <div class="col-md-9 mb-md-0 mb-5">
+                  <form
+                    id="contact-form"
+                    name="contact-form"
+                    action="mail.php"
+                    method="POST"
+                  >
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="md-form mb-0">
+                          <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            class="form-control"
+                          />
+                          <label for="name" class="">Your name</label>
+                        </div>
+                      </div>
+
+                      <div class="col-md-6">
+                        <div class="md-form mb-0">
+                          <input
+                            type="text"
+                            id="email"
+                            name="email"
+                            class="form-control"
+                          />
+                          <label for="email" class="">Your email</label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="md-form mb-0">
+                          <input
+                            type="text"
+                            id="subject"
+                            name="subject"
+                            class="form-control"
+                          />
+                          <label for="subject" class="">Subject</label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="md-form">
+                          <textarea
+                            type="text"
+                            id="message"
+                            name="message"
+                            rows="2"
+                            class="form-control md-textarea"
+                          ></textarea>
+                          <label for="message">Your message</label>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+
+                  <div class="text-center text-md-left">
+                    <a
+                      class="btn btn-primary buttonHover"
+                      onclick="document.getElementById('contact-form').submit();"
+                      ><span>Send</span></a
+                    >
+                  </div>
+                  <div class="status"></div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container main-container cusine">
+      <h1 class="text-center mb-5">Suggest Us</h1>
+      <div class="row mb-5" id="suggestions">
+        <div class="col-md-5">
+          <img src="images/suggest.jpg" alt="suggest" />
+        </div>
+        <div class="col-md-6">
+          <h3>
+            Hello welcome to our restraunt! We hope you will like our taste and
+            will surely come back to us for more meals.Our values include
+            providing fair wages for workers, giving back to the communities we
+            work with, and serving great meals and drinks. We believe tha
+            customer suggestion is the best way to improve For any suggestions
+            click here
+          </h3>
+
+          <button id="myBtn" class="btn btn-primary mt-5 buttonHover">
+            <span>Get In Touch</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; The Disaster Cafe2021.</p>
+    </footer>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="script/about.js"></script>
+  </body>
 </html>
