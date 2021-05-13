@@ -320,6 +320,7 @@ function populateMenuForm() {
             var drinks = '<div class="card col-3"><img src="' + menuItems[i].src + '"alt="Drinks" style="width:100%; height: 200px;"><h4>' + menuItems[i].name + '</h4><p class="price"> &euro; ' + menuItems[i].cost + '</p><p>' + menuItems[i].description + '</p><p><input type="number" placeholder="Quantity" min="0" class="form-control drink" id=' + menuItems[i].id + '></p></div>'
 
             $('#drinks').append(drinks);
+        }
 
     }
 }
