@@ -324,3 +324,195 @@ function populateMenuForm() {
 
     }
 }
+$("#billCalculate").click(function() {
+    emptyBillingFileds();
+    billGenerator();
+    populateMenuForm();
+});
+
+function billGenerator() {
+    var totalBill = 0;
+    var starterBill = 0;
+    var mainBill = 0;
+    var desertBill = 0;
+    var drinksBill = 0;
+    var vegBill = 0;
+    var nonVegBill = 0;
+    //calculate starter Bill
+    var starterItems = document.getElementsByClassName("starter");
+    //loop through all the starter items
+    for (var i = 0; i < starterItems.length; i++) {
+        if (starterItems[i].value) //proceed only if item is in order
+        {
+            var qty = parseInt(starterItems[i].value); //convert in num
+            var id = starterItems[i].id;
+            for (var j = 0; j < menuItems.length; j++) {
+                if (id == menuItems[j].id) {
+                    starterBill += menuItems[j].cost * qty;
+                    if (menuItems[j].isVeg)
+                        vegBill += menuItems[j].cost * qty;
+                    else
+                        nonVegBill += menuItems[j].cost * qty;
+                }
+            }
+        }
+    }
+    //calculate main Bill
+    var mainItems = document.getElementsByClassName("main");
+    for (var i = 0; i < mainItems.length; i++) {
+        if (mainItems[i].value) //proceed only if item is in order
+        {
+            var qty = parseInt(mainItems[i].value); //convert in num
+            var id = mainItems[i].id;
+            for (var j = 0; j < menuItems.length; j++) {
+                if (id == menuItems[j].id) {
+                    mainBill += menuItems[j].cost * qty;
+                    if (menuItems[j].isVeg)
+                        vegBill += menuItems[j].cost * qty;
+                    else
+                        nonVegBill += menuItems[j].cost * qty;
+                }
+            }
+        }
+    }
+    //calculate for deserts
+    var desertItems = document.getElementsByClassName("desert");
+    for (var i = 0; i < desertItems.length; i++) {
+        if (desertItems[i].value) //proceed only if item is in order
+        {
+            var qty = parseInt(desertItems[i].value); //convert in num
+            var id = desertItems[i].id;
+            for (var j = 0; j < menuItems.length; j++) {
+                if (id == menuItems[j].id) {
+                    desertBill += menuItems[j].cost * qty;
+                }
+            }
+        }
+    }
+    //calculate for drink
+    var drinkItems = document.getElementsByClassName("drink");
+    for (var i = 0; i < drinkItems.length; i++) {
+        if (drinkItems[i].value) //proceed only if item is in order
+        {
+            var qty = parseInt(drinkItems[i].value); //convert in num
+            var id = drinkItems[i].id;
+            for (var j = 0; j < menuItems.length; j++) {
+                if (id == menuItems[j].id) {
+                    drinksBill += menuItems[j].cost * qty;
+                }
+            }
+        }
+    }
+    customerId++;
+    totalBill = starterBill + mainBill + desertBill + drinksBill;
+    $('#total-bill').val('\u20AC' + " " + totalBill);
+    $('#starter-bill').val('\u20AC' + " " + starterBill);
+    $('#main-total').val('\u20AC' + " " + mainBill);
+    $('#desert-total').val('\u20AC' + " " + desertBill);
+    $('#drink-total').val('\u20AC' + " " + drinksBill);
+    $('#veg-total').val('\u20AC' + " " + vegBill);
+    $('#nonveg-total').val('\u20AC' + " " + nonVegBill);
+    var orderObject = {
+        id: customerId,
+        starter: starterBill,
+        main: mainBill,
+        desert: desertBill,
+        drink: drinksBill,
+        veg: vegBill,
+        nonveg: nonVegBill,
+        total: totalBill
+    };
+    orderArray.push(orderObject);
+
+}
+$("#myBtn").click(function() {
+    displayAllOrders();
+});
+
+function displayAllOrders() {
+    $('#total-table').empty();
+    var starterTotal = 0;
+    var mainTotal = 0;
+    var desertTotal = 0;
+    var drinkTotal = 0;
+    var vegTotal = 0;
+    var nonVegTotal = 0;
+    var total = 0;
+    //calculate total of all the orders breakdown
+    for (var i = 0; i < orderArray.length; i++) {
+        starterTotal += orderArray[i].starter;
+        mainTotal += orderArray[i].main;
+        desertTotal += orderArray[i].desert;
+        drinkTotal += orderArray[i].drink;
+        vegTotal += orderArray[i].veg;
+        nonVegTotal += orderArray[i].nonveg;
+        total += orderArray[i].total;
+    }
+    var table = '<table class="table">';
+    var tableHead = '<thead>';
+    tableHead += '<tr>'
+    tableHead += '<th>Customer ID</th>';
+    tableHead += '<th>Starter</th>';
+    tableHead += '<th>Main</th>';
+    tableHead += '<th>Desert</th>';
+    tableHead += '<th>Drink</th>';
+    tableHead += '<th>Non Veg</th>';
+    tableHead += '<th>Vegetarien</th>';
+    tableHead += '<th>Total</th>'
+    tableHead += '</tr>';
+    tableHead += '</thead>';
+    table += tableHead;
+    var tableBody = '<tbody>';
+
+    for (var j = 0; j < orderArray.length; j++) {
+        var row = '<tr>';
+        row += '<td>'+ orderArray[j].id + '</td>';
+        row += '<td>' + '\u20AC' + " " + orderArray[j].starter + '</td>';
+        row += '<td>' + '\u20AC' + " " + orderArray[j].main + '</td>';
+        row += '<td>' + '\u20AC' + " " + orderArray[j].desert + '</td>';
+        row += '<td>' + '\u20AC' + " " + orderArray[j].drink + '</td>';
+        row += '<td>' + '\u20AC' + " " + orderArray[j].veg + '</td>';
+        row += '<td>' + '\u20AC' + " " + orderArray[j].nonveg + '</td>';
+        row += '<td>' + '\u20AC' + " " + orderArray[j].total + '</td>';
+        row += '</tr>'
+        tableBody += row;
+    }
+    table += tableBody;
+    table += '</table>';
+    $('#total-table').append(table);
+}
+
+var modal = document.getElementById("total-orders");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+function emptyBillingFileds() {
+    $('#total-bill').val('');
+    $('#starter-bill').val('');
+    $('#main-total').val('');
+    $('#desert-total').val('');
+    $('#drink-total').val('');
+    $('#veg-total').val('');
+    $('#nonveg-total').val('');
+}
